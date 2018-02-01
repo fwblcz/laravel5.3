@@ -284,4 +284,4 @@ Route::get('/sendMail',function(){ \Illuminate\Support\Facades\Mail::to('1895016
 
 });
 
-执行：http://localhost:8000/sendMail 
+执行：http://localhost:8000/sendMail

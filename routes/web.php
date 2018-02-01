@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('welcome',compact('users'));
 });
 Route::get('/sendMail',function(){
-    \Illuminate\Support\Facades\Mail::to('18950168892@163.com')->send(new \App\Mail\WelcomeToLaravel());
+    $user=\App\User::find(1);
+//    \Illuminate\Support\Facades\Mail::to('18950168892@163.com')->send(new \App\Mail\WelcomeToLaravel());
+    \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\WelcomeToLaravel($user));
 });
